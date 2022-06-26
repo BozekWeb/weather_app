@@ -1,5 +1,5 @@
 //OpenWeather API Key
-const API_KEY = '61af27d00228aedc9774940f38faebaa'
+const API_KEY = 'Enter your key'
 
 //OpenWeather custom variables
 let lat, lon, currentWeather, forecastWeather, currentAirPolution
