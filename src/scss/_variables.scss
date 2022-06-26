@@ -1,0 +1,24 @@
+$theme-color-grey-dark: #333;
+$theme-color-grey-light: #eee;
+$theme-color-blue-dark: #0d0724;
+$theme-color-orange: #ffba30;
+
+$font-size-text-small: clamp(1rem, 1rem + 1vw, 1.2rem);
+$font-size-text-medium: clamp(1.2rem, 1rem + 1vw, 1.4rem);
+$font-size-text-big: clamp(1.4rem, 1rem + 1vw, 1.6rem);
+$font-size-text-huge: clamp(1.6rem, 1rem + 1vw, 1.8rem);
+
+$font-size-header-small: clamp(1.6rem, 1rem + 1vw, 2rem);
+$font-size-header-medium: clamp(2rem, 1rem + 1vw, 2.4rem);
+$font-size-header-big: clamp(2.4rem, 1rem + 1vw, 2.8rem);
+$font-size-header-huge: clamp(2.8rem, 1rem + 1vw, 3.2rem);
+
+$breakpoints-up: (
+	'small': 42.5em,
+);
+
+@mixin breakpoint($size) {
+	@media (min-width: map-get($breakpoints-up, $size)) {
+		@content;
+	}
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon"> -->
+
+    <title>WeatherApp | Bozek.Website</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar__logo">
+                <span class="navbar__logo--main">&lt;Bożek&gt;</span>
+                <span class="navbar__logo--sub">WeatherApp</span>
+            </div>
+
+            <nav class="navigation">
+                <div class="navigation__lang">
+                    <span
+                        class="navigation__lang-item navigation__lang-item--pl navigation__lang-item--active">PL</span>/<span
+                        class="navigation__lang-item navigation__lang-item--en">EN</span>
+                </div>
+                <a class="navigation__link" href="">&nbsp;</a>
+            </nav>
+        </div>
+
+        <div class="search">
+            <div class="search__city">
+            </div>
+
+            <div class="search__bar">
+                <input type="text" placeholder="" class="search__input">
+                <button class="search__button">
+                    <ion-icon name="search-sharp"></ion-icon>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div class="current-temperature">
+            <div class="current-temperature__value">&nbsp;</div>
+        </div>
+
+        <div class="current-info">
+            <div class="current-info__item">
+                <div class="current-info__item-box current-info__item-box--1 current-info__item-box--humidity">&nbsp;
+                </div>
+                <div class="current-info__item-box current-info__item-box--2 current-humidity__value">&nbsp;</div>
+            </div>
+
+
+            <div class="current-info__item">
+                <div class="current-info__item-box current-info__item-box--1 current-info__item-box--pressure">&nbsp;
+                </div>
+                <div class="current-info__item-box current-info__item-box--2 current-pressure__value">&nbsp;</div>
+            </div>
+
+            <div class="current-info__item">
+                <div class="current-info__item-box current-info__item-box--1 current-info__item-box--wind">&nbsp;</div>
+                <div class="current-info__item-box current-info__item-box--2 current-wind__value">&nbsp;</div>
+            </div>
+        </div>
+
+        <div class="forecast-weather">
+            <h3 class="header header--forecast">
+                &nbsp;
+            </h3>
+
+            <div class="forecast-weather__box">
+                <div class="forecast-weather__box-inner">
+                    &nbsp;
+                </div>
+            </div>
+        </div>
+
+        <div class="air-polution">
+            <h3 class="header header--pollution">
+                &nbsp;
+            </h3>
+
+            <div class="air-polution__header">
+                <span class="air-polution__header-text">&nbsp;</span> <span
+                    class="air-polution__header-value">&nbsp;</span>
+                <ion-icon name="leaf-sharp"></ion-icon>
+            </div>
+            <div class="air-polution__box">
+                <div class="air-polution__item ">
+                    <div class="air-polution__item-box">
+                        <div class="air-polution__item-name">
+                            PM<sub>2.5</sub>
+                        </div>
+
+                        <div class="air-polution__item-value">
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
+
+                <div class="air-polution__item ">
+                    <div class="air-polution__item-box">
+                        <div class="air-polution__item-name">
+                            PM<sub>10</sub>
+                        </div>
+
+                        <div class="air-polution__item-value">
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
+
+                <div class="air-polution__item ">
+                    <div class="air-polution__item-box">
+                        <div class="air-polution__item-name">
+                            NO<sub>2</sub>
+                        </div>
+
+                        <div class="air-polution__item-value">
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
+                <div class="air-polution__item ">
+                    <div class="air-polution__item-box">
+                        <div class="air-polution__item-name">
+                            O<sub>3</sub>
+                        </div>
+
+                        <div class="air-polution__item-value">
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
+
+                <div class="air-polution__item ">
+                    <div class="air-polution__item-box">
+                        <div class="air-polution__item-name">
+                            SO<sub>2</sub>
+                        </div>
+
+                        <div class="air-polution__item-value">
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
+
+                <div class="air-polution__item ">
+                    <div class="air-polution__item-box">
+                        <div class="air-polution__item-name">
+                            NH<sub>3</sub>
+                        </div>
+
+                        <div class="air-polution__item-value">
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            WeatherApp Bożek.Website
+        </footer>
+    </div>
+
+
+
+    <script src="./js/main.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

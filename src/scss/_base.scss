@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Tomorrow:wght@100;300;400;700;900&display=swap');
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+	box-sizing: border-box;
+	font-weight: 400;
+	font-family: 'Open Sans', sans-serif;
+
+	@include breakpoint(small) {
+		padding: 4rem;
+		background-color: $theme-color-grey-light;
+		background: radial-gradient(circle, rgba(13, 7, 36, 0.5) 0%, rgba(13, 7, 36, 0.75) 50%, rgba(13, 7, 36, 1) 100%);
+	}
+}
+
+input {
+	font-family: inherit;
+	font-size: inherit;
+}

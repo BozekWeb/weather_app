@@ -1,0 +1,419 @@
+@use 'variables' as *;
+
+.search {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $theme-color-grey-light;
+
+	position: relative;
+	height: 6rem;
+	width: 100%;
+	border-bottom: 2px solid black;
+	border-top: 2px solid black;
+
+	@include breakpoint(small) {
+		height: 8rem;
+	}
+
+	&__city {
+		font-size: 1.4rem;
+		margin: 1rem;
+		font-weight: 700;
+		width: 260px;
+		text-align: center;
+
+		@include breakpoint(small) {
+			font-size: 1.8rem;
+		}
+	}
+
+	&__bar {
+		width: 100%;
+		max-width: 500px;
+		height: 100%;
+	}
+
+	&__input {
+		border: none;
+		height: 100%;
+		width: 100%;
+		display: block;
+		background-color: #ccc;
+		padding: 0 1rem;
+		font-size: 1.4rem;
+		transform: translateX(100vw);
+		transition: all 0.5s ease;
+
+		@include breakpoint(small) {
+			font-size: 1.6rem;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&--active {
+			transform: translateX(0vw);
+		}
+	}
+
+	&__input--error::placeholder {
+		color: red;
+	}
+
+	&__button {
+		position: absolute;
+
+		top: 0;
+		right: 0;
+		opacity: 1;
+
+		width: 6rem;
+		height: 100%;
+
+		@include breakpoint(small) {
+			width: 8rem;
+		}
+
+		border: none;
+		border-radius: 0;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		background-color: $theme-color-orange;
+
+		ion-icon {
+			font-size: 3rem;
+			color: $theme-color-blue-dark;
+		}
+	}
+}
+
+.current-temperature {
+	width: 100%;
+	height: 30rem;
+
+	background-size: cover;
+	background-position: center center;
+
+	position: relative;
+
+	@include breakpoint(small) {
+		height: 40rem;
+	}
+
+	&--thunderstorm-night {
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/thunderstorm-night.jpg');
+	}
+
+    &--thunderstorm-day {
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/thunderstorm-day.jpg');
+	}
+
+    &--rain-night {
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/rain-night.jpg');
+	}
+
+    &--rain-day {
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/rain-day.jpg');
+	}
+
+    &--snow-night {
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/snow-night.jpg');
+	}
+
+    &--snow-day {
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/snow-day.jpg');
+	}
+
+    &--fog-night {
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/fog-night.jpg');
+	}
+
+    &--fog-day {
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/fog-day.jpg');
+	}
+
+    &--drizzle {
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/drizzle.jpg');
+	}
+
+    &--night {
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/night.jpg');
+	}
+
+    &--day {
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/day.jpg');
+	}
+
+	&--cloud-night {
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/cloud-night.jpg');
+	}
+
+    &--cloud-day {
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/cloud-day.jpg');
+	}
+
+	&__value {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-75%);
+
+		font-size: 8rem;
+		color: $theme-color-grey-light;
+		font-weight: 700;
+
+		span {
+			color: $theme-color-orange;
+		}
+	}
+}
+
+.current-info {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 1.5em;
+
+	background-color: $theme-color-blue-dark;
+
+	&__item {
+		width: 100%;
+		max-width: 15rem;
+		height: 10rem;
+
+		transform: translateY(-50%);
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+
+		@include breakpoint(small) {
+			width: 100%;
+			max-width: 20rem;
+			height: 12rem;
+		}
+
+		&-box {
+			height: 50%;
+			width: 100%;
+			font-size: 1.6rem;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			@include breakpoint(small) {
+				font-size: 1.8rem;
+				font-weight: 700;
+			}
+
+			&--1 {
+				background-color: $theme-color-blue-dark;
+				color: $theme-color-grey-light;
+			}
+
+			&--2 {
+				background-color: $theme-color-grey-light;
+			}
+		}
+	}
+}
+
+.forecast-weather {
+	margin-top: -1rem;
+	background-color: $theme-color-blue-dark;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+
+	&__box {
+		position: relative;
+		overflow: hidden;
+		margin-top: 5rem;
+		cursor: grab;
+
+		@include breakpoint(small) {
+			margin-top: 6.5rem;
+		}
+	}
+
+	&__box-inner {
+		display: flex;
+		gap: 10px;
+		pointer-events: none;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		padding: 0 1rem;
+	}
+
+	&__item {
+		position: relative;
+		overflow: hidden;
+		user-select: none;
+		text-align: center;
+		background-color: #ccc;
+		padding: 1rem;
+
+		&-date {
+			width: 100%;
+			font-size: $font-size-header-medium;
+			user-select: none;
+			margin-bottom: 2rem;
+		}
+
+		&-img {
+			position: absolute;
+			bottom: -7%;
+			right: -7%;
+			width: 15rem;
+			height: 15rem;
+			user-select: none;
+		}
+
+		&-info {
+			font-size: $font-size-text-medium;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			user-select: none;
+		}
+
+		&-box {
+			margin-bottom: 1rem;
+			user-select: none;
+		}
+	}
+}
+
+.air-polution {
+	padding-top: 2rem;
+	padding-bottom: 8rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: $theme-color-blue-dark;
+	padding-left: 2rem;
+	padding-right: 2rem;
+
+	@include breakpoint(small) {
+		padding-top: 3.5rem;
+		padding-bottom: 4rem;
+	}
+
+	&__box {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+		margin-top: 2rem;
+
+		@include breakpoint(small) {
+			width: 80%;
+		}
+	}
+
+	&__header {
+		margin-top: 4rem;
+		color: $theme-color-grey-light;
+		font-size: $font-size-header-small;
+
+		@include breakpoint(small) {
+			font-size: 1.8rem;
+			margin-top: 5rem;
+		}
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		ion-icon {
+			font-size: 3rem;
+			margin-left: 0.5rem;
+		}
+
+		&--good ion-icon {
+			color: green;
+		}
+
+		&--moderate ion-icon {
+			color: #8d6c09;
+		}
+
+		&--bad ion-icon {
+			color: #750909;
+		}
+
+		&--very-bad ion-icon {
+			color: #2e0202;
+		}
+	}
+
+	&__item {
+		width: 150px;
+		text-align: center;
+
+		@include breakpoint(small) {
+			width: 200px;
+		}
+
+		&-box {
+			width: 100%;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 1.8rem;
+		}
+
+		&-name {
+			width: 100%;
+			background-color: $theme-color-grey-light;
+			padding: 1rem;
+
+			@include breakpoint(small) {
+				padding: 1.5rem;
+				font-weight: 700;
+			}
+		}
+
+		&-value {
+			width: 100%;
+			padding: 1rem;
+			background-color: $theme-color-grey-dark;
+			color: $theme-color-grey-light;
+
+			@include breakpoint(small) {
+				padding: 1.5rem;
+				font-weight: 700;
+			}
+		}
+
+		&--good {
+			border-bottom: 8px solid green;
+		}
+
+		&--very-bad {
+			border-bottom: 8px solid #2e0202;
+		}
+
+		&--bad {
+			border-bottom: 8px solid #750909;
+		}
+
+		&--moderate {
+			border-bottom: 8px solid #8d6c09;
+		}
+	}
+}

@@ -1,0 +1,109 @@
+@use 'variables' as *;
+
+.container {
+	width: 100%;
+	max-width: 102.4rem;
+	margin: auto auto;
+	overflow: hidden;
+
+	@include breakpoint(small) {
+		border: 4px solid $theme-color-blue-dark;
+	}
+}
+
+.header {
+	text-align: center;
+	width: auto;
+	font-size: 1.6rem;
+
+	color: $theme-color-grey-light;
+
+	span {
+		padding: 0 1rem 0.5rem;
+		border-bottom: 2px solid $theme-color-orange;
+	}
+
+	@include breakpoint(small) {
+		font-size: 2rem;
+	}
+}
+
+.navbar {
+	width: 100%;
+	background-color: $theme-color-blue-dark;
+	padding: 2rem 1rem;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__logo {
+		font-family: 'Tomorrow', sans-serif;
+		color: $theme-color-grey-light;
+		text-shadow: 1px 1px $theme-color-orange;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		line-height: 1;
+
+		&--main {
+			font-size: 3.6rem;
+		}
+
+		&--sub {
+			font-size: 1.8rem;
+		}
+	}
+}
+
+.navigation {
+	display: flex;
+	column-gap: 1rem;
+
+	font-size: 1.6rem;
+	color: $theme-color-grey-light;
+
+	@include breakpoint(small) {
+		font-size: 1.8rem;
+	}
+
+	&__lang {
+		@include breakpoint(small) {
+			margin-right: 1rem;
+		}
+
+		&-item {
+			cursor: pointer;
+
+			&--pl {
+				margin-right: 0.5rem;
+			}
+
+			&--en {
+				margin-left: 0.5rem;
+			}
+
+			&--active {
+				font-weight: 900;
+				color: $theme-color-orange;
+			}
+		}
+	}
+
+	&__link:link,
+	&__link:visited {
+		text-decoration: none;
+		color: $theme-color-grey-light;
+	}
+}
+
+.footer {
+	padding: 3rem;
+	background-color: $theme-color-grey-dark;
+	display: flex;
+	justify-content: center;
+	color: $theme-color-grey-light;
+	font-size: 1.4rem;
+}
