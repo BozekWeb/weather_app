@@ -1,6 +1,7 @@
 # WeatherApp
 
 Author: Jakub Bożek
+
 Live preview: [link](https://weather.bozek.website/)
 
 A weather application designed mainly for mobile devices, but there is no problem with checking the operation on personal computers.
