@@ -5,7 +5,7 @@ Author: Jakub Bożek
 Live preview: [link](https://weather.bozek.website/)
 
 
-A weather application designed mainly for mobile devices. The application uses all the OpenWeather API functions available for free
+A weather application designed mainly for mobile devices. The application uses all (except maps - deprecated) OpenWeather API functions available for free
 
 Application features:
 
