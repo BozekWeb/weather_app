@@ -93,6 +93,12 @@ input {
     font-size: 1.8rem;
   }
 }
+.navigation a {
+  transition: 0.5s all;
+}
+.navigation a:hover {
+  color: #ffba30;
+}
 @media (min-width: 42.5em) {
   .navigation__lang {
     margin-right: 1rem;
@@ -100,6 +106,10 @@ input {
 }
 .navigation__lang-item {
   cursor: pointer;
+  transition: 0.5s all;
+}
+.navigation__lang-item:hover {
+  color: #ffba30;
 }
 .navigation__lang-item--pl {
   margin-right: 0.5rem;
@@ -196,11 +206,17 @@ input {
   justify-content: center;
   align-items: center;
   background-color: #ffba30;
+  transition: 0.5s all;
 }
 @media (min-width: 42.5em) {
   .search__button {
     width: 8rem;
   }
+}
+.search__button:hover, .search__button:focus {
+  background-color: rgb(184, 136, 40);
+  outline: none;
+  cursor: pointer;
 }
 .search__button ion-icon {
   font-size: 3rem;
