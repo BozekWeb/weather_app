@@ -26,3 +26,4 @@ ToDo:
 
 1. Upgrade desktop design
 2. Small refactoring JS ans SCSS files
+3. Popup - ask for check users current locations
