@@ -18,12 +18,8 @@ body {
 	box-sizing: border-box;
 	font-weight: 400;
 	font-family: 'Open Sans', sans-serif;
-
-	@include breakpoint(small) {
-		padding: 4rem;
-		background-color: $theme-color-grey-light;
-		background: radial-gradient(circle, rgba(13, 7, 36, 0.5) 0%, rgba(13, 7, 36, 0.75) 50%, rgba(13, 7, 36, 1) 100%);
-	}
+	background-color: $theme-color-blue-2;
+	//background-image: linear-gradient(to right bottom, $theme-color-blue-2 40%, $theme-color-blue-3 100%);
 }
 
 input {

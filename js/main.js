@@ -1,5 +1,5 @@
 //OpenWeather API Key
-const API_KEY = 'Enter your key'
+const API_KEY = '61af27d00228aedc9774940f38faebaa'
 
 //OpenWeather custom variables
 let lat, lon, currentWeather, forecastWeather, currentAirPolution
@@ -64,7 +64,6 @@ let dict = {
 const FORECAST_ITEM_NUM = 16
 let FORECAST_ITEM_WIDTH = 250
 let FORECAST_ITEM_HEIGTH = 200
-
 //
 const main = () => {
 	setLanguage()
@@ -240,7 +239,7 @@ async function updatePage(city = 'Jelenia Góra') {
 async function getCoords(city) {
 	let response
 
-	response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`)
+	response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`)
 	if (!response.ok) {
 		showError()
 		throw new Error(`HTTP error! status: ${response.status}`)
@@ -275,7 +274,7 @@ async function getCurrentWeather() {
 async function getForecastWeather() {
 	let response
 	response = await fetch(
-		`http://api.openweathermap.org/data/2.5/forecast?units=metric&lat=${lat}&lon=${lon}&lang=${lang}&appid=${API_KEY}`
+		`https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=${lat}&lon=${lon}&lang=${lang}&appid=${API_KEY}`
 	)
 
 	if (!response.ok) {
@@ -288,13 +287,12 @@ async function getForecastWeather() {
 //get current air pollution from API
 async function getAirPollution() {
 	let response
-	response = await fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
+	response = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
 
 	if (!response.ok) {
 		throw new Error(`HTTP error! status: ${response.status}`)
 	} else {
 		currentAirPolution = await response.json()
-		console.log(currentAirPolution)
 	}
 }
 
@@ -309,7 +307,6 @@ const updateCurrentWeather = () => {
 	const status = Object.assign({}, ...currentWeather.weather)
 
 	const weatherDay = status.icon.includes('d')
-	console.log(status)
 
 	if (weatherDay) {
 		setBackgroundImage(status, 'day')
@@ -337,7 +334,7 @@ const setBackgroundImage = (status, day) => {
 	} else if (status.id > 800 && status.id < 900) {
 		currentTempBox.classList.add(`current-temperature--cloud-${day}`)
 	} else {
-		console.log('uknown')
+		console.log('uknown-weather')
 	}
 }
 
@@ -387,7 +384,7 @@ const updateForecastWeather = () => {
 		const img = document.createElement('img')
 		img.classList.add('forecast-weather__item-img')
 		img.setAttribute('alt', 'obrazek, przedstawiący pogodę')
-		img.setAttribute('src', `http://openweathermap.org/img/wn/${forecastWeather.list[i].weather[0].icon}@2x.png`)
+		img.setAttribute('src', `https://openweathermap.org/img/wn/${forecastWeather.list[i].weather[0].icon}@2x.png`)
 		item.append(img)
 	}
 }
@@ -494,7 +491,7 @@ const resetForecastBox = () => {
 
 //change position of forecast box
 const moveForecastBox = () => {
-	let width = document.querySelector('.container').offsetWidth
+	let width = document.querySelector('.forecast__container').offsetWidth
 	let maxWidth = FORECAST_ITEM_NUM * FORECAST_ITEM_WIDTH
 	let maxBondary = -(maxWidth - width)
 

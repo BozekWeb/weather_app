@@ -2,18 +2,26 @@
 
 .search {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	background-color: $theme-color-grey-light;
+	background-color: $theme-color-white;
 
 	position: relative;
 	height: 6rem;
 	width: 100%;
-	border-bottom: 2px solid black;
-	border-top: 2px solid black;
 
 	@include breakpoint(small) {
 		height: 8rem;
+	}
+
+	.container {
+		height: 6rem;
+		justify-content: space-between;
+		align-items: center;
+
+		@include breakpoint(small) {
+			height: 8rem;
+		}
 	}
 
 	&__city {
@@ -24,13 +32,17 @@
 		text-align: center;
 
 		@include breakpoint(small) {
+			font-size: 1.6rem;
+		}
+
+		@include breakpoint(medium) {
 			font-size: 1.8rem;
 		}
 	}
 
 	&__bar {
 		width: 100%;
-		max-width: 500px;
+		max-width: 400px;
 		height: 100%;
 	}
 
@@ -39,15 +51,11 @@
 		height: 100%;
 		width: 100%;
 		display: block;
-		background-color: #ccc;
+		background-color: $theme-color-white-dark;
 		padding: 0 1rem;
 		font-size: 1.4rem;
 		transform: translateX(100vw);
 		transition: all 0.5s ease;
-
-		@include breakpoint(small) {
-			font-size: 1.6rem;
-		}
 
 		&:focus {
 			outline: none;
@@ -55,6 +63,10 @@
 
 		&--active {
 			transform: translateX(0vw);
+		}
+
+		@include breakpoint(small) {
+			font-size: 1.6rem;
 		}
 	}
 
@@ -72,10 +84,6 @@
 		width: 6rem;
 		height: 100%;
 
-		@include breakpoint(small) {
-			width: 8rem;
-		}
-
 		border: none;
 		border-radius: 0;
 
@@ -85,9 +93,22 @@
 
 		background-color: $theme-color-orange;
 
+		transition: 0.5s all;
+
+		&:hover,
+		&:focus {
+			background-color: #c07316;
+			outline: none;
+			cursor: pointer;
+		}
+
 		ion-icon {
 			font-size: 3rem;
-			color: $theme-color-blue-dark;
+			color: $theme-color-blue-1;
+		}
+
+		@include breakpoint(small) {
+			width: 8rem;
 		}
 	}
 }
@@ -102,50 +123,61 @@
 	position: relative;
 
 	@include breakpoint(small) {
-		height: 40rem;
+		height: 35rem;
+	}
+
+	@include breakpoint(medium) {
+		height: 45rem;
+	}
+
+	@include breakpoint(big) {
+		min-height: 300px;
+		height: calc(100vh - 8rem - 12rem - 10rem);
 	}
 
 	&--thunderstorm-night {
-		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/thunderstorm-night.jpg');
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)),
+			url('/img/thunderstorm-night.jpg');
 	}
 
-    &--thunderstorm-day {
-		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/thunderstorm-day.jpg');
+	&--thunderstorm-day {
+		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)),
+			url('/img/thunderstorm-day.jpg');
 	}
 
-    &--rain-night {
+	&--rain-night {
 		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/rain-night.jpg');
 	}
 
-    &--rain-day {
+	&--rain-day {
 		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/rain-day.jpg');
 	}
 
-    &--snow-night {
+	&--snow-night {
 		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/snow-night.jpg');
 	}
 
-    &--snow-day {
+	&--snow-day {
 		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/snow-day.jpg');
 	}
 
-    &--fog-night {
+	&--fog-night {
 		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/fog-night.jpg');
 	}
 
-    &--fog-day {
+	&--fog-day {
 		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/fog-day.jpg');
 	}
 
-    &--drizzle {
+	&--drizzle {
 		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/drizzle.jpg');
 	}
 
-    &--night {
+	&--night {
 		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/night.jpg');
 	}
 
-    &--day {
+	&--day {
 		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/day.jpg');
 	}
 
@@ -153,7 +185,7 @@
 		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/cloud-night.jpg');
 	}
 
-    &--cloud-day {
+	&--cloud-day {
 		background-image: linear-gradient(to right bottom, rgba(#000, 0.8), rgba(#000, 0.2)), url('/img/cloud-day.jpg');
 	}
 
@@ -164,11 +196,15 @@
 		transform: translateX(-50%) translateY(-75%);
 
 		font-size: 8rem;
-		color: $theme-color-grey-light;
+		color: $theme-color-white;
 		font-weight: 700;
 
 		span {
 			color: $theme-color-orange;
+		}
+
+		@include breakpoint(big) {
+			font-size: 10rem;
 		}
 	}
 }
@@ -179,8 +215,6 @@
 	justify-content: center;
 	align-items: center;
 	column-gap: 1.5em;
-
-	background-color: $theme-color-blue-dark;
 
 	&__item {
 		width: 100%;
@@ -194,10 +228,9 @@
 		justify-content: space-between;
 		align-items: center;
 
-		@include breakpoint(small) {
-			width: 100%;
+		@include breakpoint(medium) {
 			max-width: 20rem;
-			height: 12rem;
+			height: 14rem;
 		}
 
 		&-box {
@@ -209,18 +242,17 @@
 			justify-content: center;
 			align-items: center;
 
-			@include breakpoint(small) {
-				font-size: 1.8rem;
-				font-weight: 700;
+			@include breakpoint(medium) {
+				font-size: 2rem;
 			}
 
 			&--1 {
-				background-color: $theme-color-blue-dark;
-				color: $theme-color-grey-light;
+				background-color: $theme-color-blue-2;
+				color: $theme-color-white;
 			}
 
 			&--2 {
-				background-color: $theme-color-grey-light;
+				background-color: $theme-color-white;
 			}
 		}
 	}
@@ -228,20 +260,26 @@
 
 .forecast-weather {
 	margin-top: -1rem;
-	background-color: $theme-color-blue-dark;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	position: relative;
+
+	.container {
+		width: 100%;
+		max-width: 1000px;
+	}
 
 	&__box {
 		position: relative;
 		overflow: hidden;
 		margin-top: 5rem;
 		cursor: grab;
+		width: 100%;
 
-		@include breakpoint(small) {
-			margin-top: 6.5rem;
+		@include breakpoint(medium) {
+			margin-top: 7rem;
 		}
 	}
 
@@ -260,12 +298,14 @@
 		overflow: hidden;
 		user-select: none;
 		text-align: center;
-		background-color: #ccc;
+		background-color: $theme-color-white-dark;
 		padding: 1rem;
+
+		width: 250px;
 
 		&-date {
 			width: 100%;
-			font-size: $font-size-header-medium;
+			font-size: 1.8rem;
 			user-select: none;
 			margin-bottom: 2rem;
 		}
@@ -280,7 +320,7 @@
 		}
 
 		&-info {
-			font-size: $font-size-text-medium;
+			font-size: 1.4rem;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -301,13 +341,16 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: $theme-color-blue-dark;
 	padding-left: 2rem;
 	padding-right: 2rem;
 
-	@include breakpoint(small) {
-		padding-top: 3.5rem;
-		padding-bottom: 4rem;
+	@include breakpoint(medium) {
+		padding-top: 4rem;
+	}
+
+	.container {
+		flex-direction: column;
+		max-width: 700px;
 	}
 
 	&__box {
@@ -317,20 +360,15 @@
 		align-items: center;
 		gap: 2rem;
 		margin-top: 2rem;
-
-		@include breakpoint(small) {
-			width: 80%;
-		}
 	}
 
 	&__header {
 		margin-top: 4rem;
-		color: $theme-color-grey-light;
-		font-size: $font-size-header-small;
+		color: $theme-color-white;
+		font-size: 1.6rem;
 
-		@include breakpoint(small) {
-			font-size: 1.8rem;
-			margin-top: 5rem;
+		@include breakpoint(medium) {
+			margin-top: 4rem;
 		}
 
 		display: flex;
@@ -363,40 +401,41 @@
 		width: 150px;
 		text-align: center;
 
-		@include breakpoint(small) {
+		@include breakpoint(medium) {
 			width: 200px;
 		}
 
 		&-box {
 			width: 100%;
-
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
 			align-items: center;
 			font-size: 1.8rem;
+
+			@include breakpoint(medium) {
+				font-size: 2rem;
+			}
 		}
 
 		&-name {
 			width: 100%;
-			background-color: $theme-color-grey-light;
+			background-color: $theme-color-white;
 			padding: 1rem;
 
-			@include breakpoint(small) {
+			@include breakpoint(medium) {
 				padding: 1.5rem;
-				font-weight: 700;
 			}
 		}
 
 		&-value {
 			width: 100%;
 			padding: 1rem;
-			background-color: $theme-color-grey-dark;
-			color: $theme-color-grey-light;
+			background-color: $theme-color-blue-1;
+			color: $theme-color-white;
 
-			@include breakpoint(small) {
+			@include breakpoint(medium) {
 				padding: 1.5rem;
-				font-weight: 700;
 			}
 		}
 

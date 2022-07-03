@@ -14,8 +14,8 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="navbar">
+    <div class="navbar">
+        <div class="container">
             <div class="navbar__logo">
                 <span class="navbar__logo--main">&lt;Bożek&gt;</span>
                 <span class="navbar__logo--sub">WeatherApp</span>
@@ -30,8 +30,10 @@
                 <a class="navigation__link" href="https://bozek.website">&nbsp;</a>
             </nav>
         </div>
+    </div>
 
-        <div class="search">
+    <div class="search">
+        <div class="container">
             <div class="search__city">
             </div>
 
@@ -41,51 +43,57 @@
                     <ion-icon name="search-sharp"></ion-icon>
                 </button>
             </div>
+        </div>
+    </div>
 
+    <div class="current-temperature">
+        <div class="current-temperature__value">&nbsp;</div>
+    </div>
 
+    <div class="current-info">
+        <div class="current-info__item">
+            <div class="current-info__item-box current-info__item-box--1 current-info__item-box--humidity">&nbsp;
+            </div>
+            <div class="current-info__item-box current-info__item-box--2 current-humidity__value">&nbsp;</div>
         </div>
 
-        <div class="current-temperature">
-            <div class="current-temperature__value">&nbsp;</div>
+
+        <div class="current-info__item">
+            <div class="current-info__item-box current-info__item-box--1 current-info__item-box--pressure">&nbsp;
+            </div>
+            <div class="current-info__item-box current-info__item-box--2 current-pressure__value">&nbsp;</div>
         </div>
 
-        <div class="current-info">
-            <div class="current-info__item">
-                <div class="current-info__item-box current-info__item-box--1 current-info__item-box--humidity">&nbsp;
-                </div>
-                <div class="current-info__item-box current-info__item-box--2 current-humidity__value">&nbsp;</div>
-            </div>
-
-
-            <div class="current-info__item">
-                <div class="current-info__item-box current-info__item-box--1 current-info__item-box--pressure">&nbsp;
-                </div>
-                <div class="current-info__item-box current-info__item-box--2 current-pressure__value">&nbsp;</div>
-            </div>
-
-            <div class="current-info__item">
-                <div class="current-info__item-box current-info__item-box--1 current-info__item-box--wind">&nbsp;</div>
-                <div class="current-info__item-box current-info__item-box--2 current-wind__value">&nbsp;</div>
-            </div>
+        <div class="current-info__item">
+            <div class="current-info__item-box current-info__item-box--1 current-info__item-box--wind">&nbsp;</div>
+            <div class="current-info__item-box current-info__item-box--2 current-wind__value">&nbsp;</div>
         </div>
+    </div>
 
-        <div class="forecast-weather">
-            <h3 class="header header--forecast">
-                &nbsp;
-            </h3>
+    <div class="forecast-weather">
+        <h3 class="header header--forecast">
+            &nbsp;
+        </h3>
 
+        <div class="container forecast__container">
             <div class="forecast-weather__box">
                 <div class="forecast-weather__box-inner">
-                    &nbsp;
+                    <div class="forecast-weather__item">
+
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="air-polution">
-            <h3 class="header header--pollution">
-                &nbsp;
-            </h3>
 
+    </div>
+
+    <div class="air-polution">
+        <h3 class="header header--pollution">
+            &nbsp;
+        </h3>
+
+        <div class="container">
             <div class="air-polution__header">
                 <span class="air-polution__header-text">&nbsp;</span> <span
                     class="air-polution__header-value">&nbsp;</span>
@@ -165,10 +173,12 @@
             </div>
         </div>
 
-        <footer class="footer">
-            WeatherApp Bożek.Website
-        </footer>
     </div>
+
+    <footer class="footer">
+        WeatherApp Bożek.Website
+    </footer>
+
 
 
 
